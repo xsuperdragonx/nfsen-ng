@@ -1,0 +1,21 @@
+services:
+
+  nfsen:
+    container_name: nfsen-ng
+    image: repo.hpcc.io.vn/nfsen-ng-nfsen:1.0
+    ports:
+    - 81:80
+    volumes:
+    - ./profiles-data:/var/nfdump/profiles-data
+    - ./sources.conf:/tmp/sources.conf:ro
+    restart: unless-stopped
+
+  nfdump:
+    container_name: nfsen-nf-nfdump
+    image: repo.hpcc.io.vn/nfsen-ng-nfdump:1.0
+    ports:
+    - 2055:9000/udp
+    volumes:
+    - ./profiles-data:/data
+    - ./sources.conf:/tmp/sources.conf:ro
+    restart: unless-stopped
