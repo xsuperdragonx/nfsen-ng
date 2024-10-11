@@ -10,5 +10,5 @@ To use nfsen-ng:
    
    docker compose up -d
    
-   docker exec nfsen-ng-nfdump ln -s /usr/bin/nfdump /usr/local/bin/nfdump
+   docker exec nfsen-ng ln -s /usr/local/bin/nfdump /usr/bin/nfdump
 7. Wait a bit and access the web at  http://your-server-ip:81 
